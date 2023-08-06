@@ -187,6 +187,10 @@ struct FeatureA2View: ViewControllable {
             Spacer()
         }
     }
+    
+    func viewWillAppear(_ viewController: UIViewController) {
+        viewController.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 }
 
 final class FeatureA1ViewModel: ObservableObject {
@@ -221,6 +225,7 @@ struct FeatureA1View: ViewControllable {
     }
     
     func viewWillAppear(_ viewController: UIViewController) {
+        viewController.navigationController?.setNavigationBarHidden(false, animated: true)
         print("\(type(of: self)) \(#function)")
         vm.title = "A1 (updated)"
     }
@@ -318,6 +323,10 @@ struct RootView: ViewControllable {
             }
             Spacer()
         }
+    }
+    
+    func viewWillAppear(_ viewController: UIViewController) {
+        viewController.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }
 
