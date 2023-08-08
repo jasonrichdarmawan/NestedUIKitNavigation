@@ -25,14 +25,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let navigationController else { return }
         
-        let rootCoordinator = RootCoordinator(navigationController: navigationController)
-        
-        let view = RootView(coordinator: rootCoordinator)
-        let viewController = HostingController(rootView: view)
+        let coordinator = RootCoordinator(navigationController: navigationController)
         
         window?.rootViewController = navigationController
         
-        navigationController.pushViewController(viewController, animated: false)
+        _ = coordinator.pushToRoute(RootRoute.Root)
         
         window?.makeKeyAndVisible()
     }

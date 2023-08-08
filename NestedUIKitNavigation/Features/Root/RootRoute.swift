@@ -8,6 +8,7 @@
 import Foundation
 
 enum RootRoute: NavigationRoute {
+    case Root
     case FeatureA1
     case FeatureA2
 }

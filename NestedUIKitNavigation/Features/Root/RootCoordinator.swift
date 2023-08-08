@@ -47,21 +47,26 @@ final class RootCoordinator: Coordinator {
     
     private func pushToRootRoute(_ route: RootRoute) -> Bool {
         switch route {
+        case .Root:
+            let view = RootView(coordinator: self)
+            let viewController = HostingController(rootView: view)
+            navigationController.pushViewController(viewController, animated: true)
+            return true
         case .FeatureA1:
-            let featureCoordinator = FeatureCoordinator(navigationController: navigationController)
-            self.featureCoordinator = featureCoordinator
-            guard let featureCoordinator = self.featureCoordinator else { return false }
-            return featureCoordinator.pushToRoute(FeatureRoute.FeatureA1)
+            let coordinator = FeatureCoordinator(navigationController: navigationController)
+            featureCoordinator = coordinator
+            return coordinator.pushToRoute(FeatureRoute.FeatureA1)
         case .FeatureA2:
-            let featureCoordinator = FeatureCoordinator(navigationController: navigationController)
-            self.featureCoordinator = featureCoordinator
-            guard let featureCoordinator = self.featureCoordinator else { return false }
-            return featureCoordinator.pushToRoute(FeatureRoute.FeatureA2)
+            let coordinator = FeatureCoordinator(navigationController: navigationController)
+            featureCoordinator = coordinator
+            return coordinator.pushToRoute(FeatureRoute.FeatureA2)
         }
     }
     
     private func popToRootRoute(_ route: RootRoute) -> Bool {
         switch route {
+        case .Root:
+            return false
         case .FeatureA1:
             return false
         case .FeatureA2:

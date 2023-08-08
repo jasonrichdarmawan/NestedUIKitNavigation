@@ -56,21 +56,22 @@ final class FeatureCoordinator: Coordinator {
         switch route {
         case .FeatureA1:
             guard featureA1ViewController == nil else { return false }
-            let vm = FeatureA1ViewModel()
+            let viewModel = FeatureA1ViewModel()
+            featureA1ViewModel = viewModel
             
-            let view = FeatureA1View(coordinator: self, vm: vm)
-            let featureA1ViewController = HostingController(rootView: view)
-            self.featureA1ViewController = featureA1ViewController
-            guard let featureA1ViewController = self.featureA1ViewController else { return false }
-            navigationController.pushViewController(featureA1ViewController, animated: true)
+            let view = FeatureA1View(coordinator: self, vm: viewModel)
+            let viewController = HostingController(rootView: view)
+            featureA1ViewController = viewController
+            
+            navigationController.pushViewController(viewController, animated: true)
         case .FeatureA2:
             guard featureA2ViewController == nil else { return false }
             
             let view = FeatureA2View(coordinator: self)
-            let featureA2ViewController = HostingController(rootView: view)
-            self.featureA2ViewController = featureA2ViewController
-            guard let featureA2ViewController = self.featureA2ViewController else { return false }
-            navigationController.pushViewController(featureA2ViewController, animated: true)
+            let viewController = HostingController(rootView: view)
+            featureA2ViewController = viewController
+            
+            navigationController.pushViewController(viewController, animated: true)
         }
         
         return true
@@ -83,6 +84,7 @@ final class FeatureCoordinator: Coordinator {
         case .FeatureA2:
             if featureA2ViewController == nil { return false }
         }
+        
         return true
     }
     
