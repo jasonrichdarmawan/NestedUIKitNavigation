@@ -144,18 +144,18 @@
 			isa = PBXGroup;
 			children = (
 				96BB008B2A8163BA00073134 /* Navigation */,
-				96BB008A2A8163A100073134 /* Presentation */,
+				96BB008A2A8163A100073134 /* Coordinator */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		96BB008A2A8163A100073134 /* Presentation */ = {
+		96BB008A2A8163A100073134 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
 				96BB006E2A81614A00073134 /* NavigationRoute.swift */,
 				96BB00702A81615A00073134 /* Coordinator.swift */,
 			);
-			path = Presentation;
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		96BB008B2A8163BA00073134 /* Navigation */ = {
