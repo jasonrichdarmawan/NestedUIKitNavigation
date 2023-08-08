@@ -48,20 +48,14 @@ final class RootCoordinator: Coordinator {
     private func pushToRootRoute(_ route: RootRoute) -> Bool {
         switch route {
         case .FeatureA1:
-            var featureCoordinator = self.featureCoordinator
-            if featureCoordinator == nil {
-                featureCoordinator = FeatureCoordinator(navigationController: navigationController)
-            }
+            let featureCoordinator = FeatureCoordinator(navigationController: navigationController)
             self.featureCoordinator = featureCoordinator
-            guard let featureCoordinator else { return false }
+            guard let featureCoordinator = self.featureCoordinator else { return false }
             return featureCoordinator.pushToRoute(FeatureRoute.FeatureA1)
         case .FeatureA2:
-            var featureCoordinator = self.featureCoordinator
-            if featureCoordinator == nil {
-                featureCoordinator = FeatureCoordinator(navigationController: navigationController)
-            }
+            let featureCoordinator = FeatureCoordinator(navigationController: navigationController)
             self.featureCoordinator = featureCoordinator
-            guard let featureCoordinator else { return false }
+            guard let featureCoordinator = self.featureCoordinator else { return false }
             return featureCoordinator.pushToRoute(FeatureRoute.FeatureA2)
         }
     }
