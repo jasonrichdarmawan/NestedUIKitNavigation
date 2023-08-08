@@ -13,9 +13,9 @@ struct FeatureA2View: ViewControllable {
     var body: some View {
         VStack {
             Text("Feature A2")
-            if coordinator.canPopToRoute(FeatureRoute.FeatureA1) {
+            if coordinator.canPopToViewController(FeatureRoute.FeatureA1) {
                 Button {
-                    _ = coordinator.popToRoute(FeatureRoute.FeatureA1)
+                    _ = coordinator.popToViewController(FeatureRoute.FeatureA1)
                 } label: {
                     Text("pop to Feature A1")
                 }

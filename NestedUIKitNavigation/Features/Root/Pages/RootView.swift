@@ -14,12 +14,12 @@ struct RootView: ViewControllable {
         VStack {
             Text("Root")
             Button {
-                _ = coordinator.pushToRoute(RootRoute.FeatureA1)
+                _ = coordinator.pushViewController(RootRoute.FeatureA1)
             } label: {
                 Text("Go to Feature A1")
             }
             Button {
-                _ = coordinator.pushToRoute(RootRoute.FeatureA2)
+                _ = coordinator.pushViewController(RootRoute.FeatureA2)
             } label: {
                 Text("Go to Feature A2")
             }

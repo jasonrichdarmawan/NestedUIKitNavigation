@@ -22,21 +22,21 @@ final class RootCoordinator: Coordinator {
     
     weak var featureCoordinator: FeatureCoordinator?
     
-    func pushToRoute(_ route: NavigationRoute) -> Bool {
+    func pushViewController(_ route: NavigationRoute) -> Bool {
         if let route = route as? RootRoute {
             return pushToRootRoute(route)
         }
         return false
     }
     
-    func popToRoute(_ route: NavigationRoute) -> Bool {
+    func popToViewController(_ route: NavigationRoute) -> Bool {
         if let route = route as? RootRoute {
             return popToRootRoute(route)
         }
         return false
     }
     
-    func canPopToRoute(_ route: NavigationRoute) -> Bool {
+    func canPopToViewController(_ route: NavigationRoute) -> Bool {
         return false
     }
     
@@ -55,11 +55,11 @@ final class RootCoordinator: Coordinator {
         case .FeatureA1:
             let coordinator = FeatureCoordinator(navigationController: navigationController)
             featureCoordinator = coordinator
-            return coordinator.pushToRoute(FeatureRoute.FeatureA1)
+            return coordinator.pushViewController(FeatureRoute.FeatureA1)
         case .FeatureA2:
             let coordinator = FeatureCoordinator(navigationController: navigationController)
             featureCoordinator = coordinator
-            return coordinator.pushToRoute(FeatureRoute.FeatureA2)
+            return coordinator.pushViewController(FeatureRoute.FeatureA2)
         }
     }
     

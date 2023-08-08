@@ -25,21 +25,21 @@ final class FeatureCoordinator: Coordinator {
     
     weak var featureA2ViewController: UIViewController?
     
-    func pushToRoute(_ route: NavigationRoute) -> Bool {
+    func pushViewController(_ route: NavigationRoute) -> Bool {
         if let route = route as? FeatureRoute {
             return pushToFeatureRoute(route)
         }
         return false
     }
     
-    func canPopToRoute(_ route: NavigationRoute) -> Bool {
+    func canPopToViewController(_ route: NavigationRoute) -> Bool {
         if let route = route as? FeatureRoute {
             return canPopToFeatureRoute(route)
         }
         return false
     }
     
-    func popToRoute(_ route: NavigationRoute) -> Bool {
+    func popToViewController(_ route: NavigationRoute) -> Bool {
         if let route = route as? FeatureRoute {
             return popToFeatureRoute(route)
         }
